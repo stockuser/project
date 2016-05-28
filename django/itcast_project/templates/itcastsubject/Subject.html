@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>itcastsubject</title>
+</head>
+
+<body>
+    <h1>{{ subject_name }}</h1>
+    {% if subject %}
+        {% if pages %}
+        <ul>
+            {% for page in pages %}
+            <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <strong>No pages currently in Subject.</strong>
+        {% endif %}
+    {% else %}
+        The specified Subject {{ subject_name }} does not exist!
+    {% endif %}
+    <a href="/itcastsubject/subject/{{subject.slug}}/add_page/">Add a New page</a><br />
+</body>
+</html>
