@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>itcastsubject</title>
+</head>
+
+<body>
+    <h1>itcastsubject says..hello world!</h1>
+
+    {% if categories %}
+        <ul>
+            {% for subject in categories %}
+            <!-- Following line changed to add an HTML hyperlink -->
+            <li>
+            <a href="/itcastsubject/showsubject/{{ subject.slug }}">{{ subject.name }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+   {% else %}
+        <strong>There are no categories present.</strong>
+   {% endif %}
+
+<a href="/itcastsubject/add_subject">create Subject</a>
+</body>
+</html>
